@@ -54,4 +54,4 @@ groupadd --gid ${JENKINS_AGENT_DOCKER_GID} docker && usermod -aG docker jenkins
 env | grep _ >> /etc/environment
 
 ssh-keygen -A
-exec /usr/sbin/sshd -D -e "${@}"
+exec /usr/sbin/sshd -D -p "${SSH_PORT}" -e "${@}"
